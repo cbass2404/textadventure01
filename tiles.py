@@ -82,6 +82,20 @@ class GiantSpiderRoom(EnemyRoom):
             """
 
 
+class SnakeRoom(EnemyRoom):
+    def __init__(self, x, y):
+        super().__init__(x, y, enemies.Snake())
+
+    def intro_text(self):
+        if self.enemy.is_alive():
+            return """
+            As you enter the new room, you hear a soft hissing above the soft whistle of wind in the cracks of the cave.
+            Curious about what it is, you light the torch on the nearby wall.
+            Just in time!
+            A snake slithers it's way towards you!
+            """
+
+
 class OgreRoom(EnemyRoom):
     def __init__(self, x, y):
         super().__init__(x, y, enemies.Ogre())
