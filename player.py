@@ -1,4 +1,6 @@
+import random
 import items
+import world
 
 
 class Player:
@@ -47,3 +49,13 @@ class Player:
             print(f"You killed {enemy.name}!")
         else:
             print(f"{enemy.name} HP is {enemy.hp}.")
+
+    def do_action(self, action, **kwargs):
+        action_method = getattr(self, action.method.__name__)
+        if action_method:
+            action_method(**kwargs)
+
+    def flee(self, tile):
+        available_moves = tile.adjacent_moves()
+        r = random.randint(0, len(available_moves) - 1)
+        self.do_action(available_moves[r])
