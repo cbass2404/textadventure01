@@ -28,6 +28,19 @@ class StartingRoom(MapTile):
         pass
 
 
+class ExitCaveRoom(MapTile):
+    def intro_text(self):
+        return """
+        You exit the mouth of the cave, the fresh air is a pleasant change from the putrid stench in the ogre lair.
+        Freedom is seen in every direction, you pick the direction of smoke, jingling with your new found wealth.
+        Hopefully a bath and fresh food can be found there!
+        (To be continued)
+        """
+
+    def modify_player(self, player):
+        pass
+
+
 class LootRoom(MapTile):
     def __init__(self, x, y, item):
         self.item = item
@@ -134,6 +147,19 @@ class Find5GoldRoom(LootRoom):
 
     def intro_text(self):
         return """
-        Scattered about the area is gold.
+        Scattered about this section of the cave is 5 gold.
         You gather it into your satchel.
+        """
+
+
+class Find100GoldRoom(LootRoom):
+    def __init__(self, x, y):
+        super().__init__(x, y, items.Gold(100))
+
+    def intro_text(self):
+        return """
+        Scattered about this section of the cave is 100 gold!
+        The bones of the ogres victims lay about as his trophies
+        You gather your spoils into your satchel.
+        Light lies to the north, the light of a sunrise.
         """
