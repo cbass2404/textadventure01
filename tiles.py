@@ -58,7 +58,7 @@ class ExitCaveRoom(MapTile):
         """
 
     def modify_player(self, player):
-        pass
+        player.victory = True
 
 
 class LootRoom(MapTile):

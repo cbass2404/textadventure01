@@ -1,10 +1,10 @@
 	ExitCaveRoom		GiantSpiderRoom
 	Find100GoldRoom		EmptyCavePath
 	OgreRoom		EmptyCavePath
-	EmptyCavePath		Find5GoldRoom		EmptyCavePath	FindDaggerRoom
-	EmptyCavePath		EmptyCavePath		EmptyCavePath
-Find5GoldRoom	EmptyCavePath	EmptyCavePath	StartingRoom	EmptyCavePath	Find5GoldRoom	GiantSpiderRoom
-			EmptyCavePath
-	SnakeRoom	EmptyCavePath	EmptyCavePath
-			Find5GoldRoom
-			SnakeRoom
+	EmptyCavePath		Find5GoldRoom
+	EmptyCavePath		EmptyCavePath
+Find5GoldRoom	EmptyCavePath	EmptyCavePath	StartingRoom
+EmptyCavePath			EmptyCavePath
+EmptyCavePath		EmptyCavePath	EmptyCavePath
+GiantSpiderRoom			Find5GoldRoom
+FindDaggerRoom			SnakeRoom
