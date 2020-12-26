@@ -30,7 +30,6 @@ class MapTile:
     def available_actions(self):
         moves = self.adjacent_moves()
         moves.append(actions.ViewInventory())
-
         return moves
 
 
@@ -132,6 +131,10 @@ class SnakeRoom(EnemyRoom):
             Curious about what it is, you light the torch on the nearby wall.
             Just in time!
             A snake slithers it's way towards you!
+            """
+        else:
+            return """
+            The mangled corpse of a snake lay at your feet, there is nothing else noteworthy.
             """
 
 
